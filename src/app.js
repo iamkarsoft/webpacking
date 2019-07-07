@@ -1,6 +1,8 @@
 import './assets/styles/app.scss'
-if(process.env.NODE_ENV==='prod'){
-  console.log('we are in production')
-}
+import * as api from './app/api'
 
-console.log(process.env.API_URL)
+
+api.getPosts().then((response)=>{
+  console.log(response)
+})
+ 

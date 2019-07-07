@@ -8,11 +8,18 @@
     /** creating local server using webpack-dev-server
   npm install webpack-dev-server --save-dev 
   **/
+
+    devtool: 'cheap-eval-source-map',
     module: {
       rules: [
         {
           test: /\.scss$/,
-          use: ["style-loader", "css-loader", "sass-loader"]
+          use: ["style-loader",{
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          }, "sass-loader"]
         }
       ]
     },
