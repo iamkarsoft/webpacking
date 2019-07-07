@@ -8,16 +8,23 @@
     /** creating local server using webpack-dev-server
   npm install webpack-dev-server --save-dev 
   **/
+    module: {
+      rules: [
+        {
+          test: /\.scss$/,
+          use: ["style-loader", "css-loader", "sass-loader"]
+        }
+      ]
+    },
     devServer: {
       contentBase: path.join(__dirname, "../dist"),
       port: 6565,
       compress: true,
       open: true
     },
-     plugins: [
+    plugins: [
       new webpack.DefinePlugin({
-          'process.env': JSON.stringify(env)
+        'process.env': JSON.stringify(env)
       })
     ]
-    
   });

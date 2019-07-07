@@ -17,8 +17,6 @@ webpack(config, function(err,stats){
     colors: true,
     modules: false,
     children: false,
-    chuncks: false,
-    chunckModules: false
   }))
   console.log(chalk.green('Building Complete'))
 })
