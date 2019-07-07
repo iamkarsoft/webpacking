@@ -10,6 +10,12 @@ module.exports = {
    * adding style loaders and css loaders
    * npm install css-loader and style-loader
    */
+  resolve:{
+    alias: {
+      '@': path.join(__dirname, '../src'),
+      'styles': path.join(__dirname, '../src/assets/styles'),
+    }
+  },
   module: {
     rules: [
     
